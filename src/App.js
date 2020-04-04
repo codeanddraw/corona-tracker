@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import moment from 'moment';
+import coronaLogo from './assets/corona-img.png';
+import './stylesheets/App.css';
+import Table from './components/Table'
 
-function App() {
+class App extends React.Component{
+  constructor(props){
+    super(props)
+    this.state={
+
+    }
+  }
+
+  componentDidMount() {
+   
+  }
+
+  render(){
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={coronaLogo} className="App-logo" alt="logo" />
+        <span className="col row App-title">
+          <h2>Live statistics to track COVID19 cases reported in all the U.S. states.</h2>
+          <p>By Nisha Chaube | {moment().format('MMMM Do YYYY, h:mm:ss a')}</p>
+        </span>
       </header>
+      <div className="App-body">
+         <Table/>
+      </div>
     </div>
   );
+  }
 }
 
 export default App;
